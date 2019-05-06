@@ -26,18 +26,23 @@ export class TodoService {
   }
 
   remove(item:todo){
-   console.log("remove");
+
+    let idx = this.doneLijst.findIndex(it=>it.name == item.name);
+    if(idx > 0)
+      this.doneLijst.splice(idx,1);
+  }
+  /* console.log("remove");
    console.log(item);
 
     let temp = this.doneLijst.filter(function(value, index, arr){     
       return value.name != item.name;  
   });
 
-  this.doneLijst = [];
+ // this.doneLijst = [];
   for(var i=0;i<temp.length;i++)
     this.doneLijst[i]= temp[i];
-console.log(this.doneLijst);
+    console.log(this.doneLijst);
 //  this.doneLijst = [...temp];
 
-  }
+  }*/
 }
