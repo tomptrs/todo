@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {todo} from "../app/todo/todo.component";
+import { todo } from './classes/todo';
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,18 +32,5 @@ export class TodoService {
     if(idx > 0)
       this.doneLijst.splice(idx,1);
   }
-  /* console.log("remove");
-   console.log(item);
-
-    let temp = this.doneLijst.filter(function(value, index, arr){     
-      return value.name != item.name;  
-  });
-
- // this.doneLijst = [];
-  for(var i=0;i<temp.length;i++)
-    this.doneLijst[i]= temp[i];
-    console.log(this.doneLijst);
-//  this.doneLijst = [...temp];
-
-  }*/
+ 
 }

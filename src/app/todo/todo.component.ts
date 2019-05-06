@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../todo.service';
+import { todo } from '../classes/todo';
 
-export class todo{
-  constructor(public name:string, public isDone:boolean){
-    
-  }
-}
+
 
 @Component({
   selector: 'app-todo',
@@ -14,17 +12,14 @@ export class todo{
 export class TodoComponent implements OnInit {
 
   lijst:todo[];
-  constructor() {
-    this.lijst = [];
-    this.lijst.push(new todo("winkelen",false));
-    this.lijst.push(new todo("tuin klaarmaken",false));
-    this.lijst.push(new todo("afwassen",false));
+  constructor(todoService:TodoService) {
+    this.lijst = todoService.todoLijst;   
    }
 
   ngOnInit() {
   }
   add(arg){
-    console.log(arg.value);
+    
     this.lijst.push(new todo(arg.value.item,false));
   }
 
