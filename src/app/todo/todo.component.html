@@ -1,0 +1,13 @@
+<form class="example-form" #myform="ngForm" (ngSubmit)="add(myform)">
+   
+  <mat-form-field>
+     <input matInput placeholder="To Do item" value="enter todo item" name="item" ngModel>
+    
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Add to do </button>
+    
+   </form>
+
+<app-todo-item *ngFor="let t of lijst" [myTodo]="t"></app-todo-item>
+
